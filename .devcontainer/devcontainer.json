@@ -1,0 +1,21 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "code",
+    "workspaceFolder": "/root/projects",
+    "extensions": [
+        "actboy168.tasks",
+        "bierner.markdown-mermaid",
+        "eamodio.gitlens",
+        "ms-vscode.cpptools",
+        "ms-vsliveshare.vsliveshare-pack",
+        "ritwickdey.LiveServer",
+        "rioj7.command-variable",
+        "tdennis4496.cmantic",
+        "twxs.cmake",
+        "xaver.clang-format",
+        "ziyasal.vscode-open-in-github",
+        "statiolake.vscode-rustfmt",
+        "rust-lang.rust-analyzer"
+    ]
+}

@@ -1,0 +1,55 @@
+#!/bin/bash
+# Bash Menu Script Example
+
+printf "\nWhat would you like to generate?\n"
+PS3=' [1,2,3] > '
+options=("Service" "Applet" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Service")
+            choice=1
+            break;
+            ;;
+        "Applet")
+            choice=2
+            break
+            ;;
+        "Quit")
+            choice=3
+            break
+            ;;
+        *) echo "Invalid option $REPLY";;
+    esac
+done
+
+printf "\n"
+
+if [ $choice -eq 1 ]
+then
+    printf "Okay, what language would you like to use?\n"
+    PS3=' [1,2,3] > '
+    options2=("C++" "Rust" "Quit")
+    select opt2 in "${options2[@]}"
+    do
+        case $opt2 in
+            "C++")
+                psi-generate-service-cpp
+                break
+                ;;
+            "Rust")
+                # psi-generate-service-rust
+                printf "\nSorry, not yet supported.\n\n"
+                break
+                ;;
+            "Quit")
+                break
+                ;;
+            *) echo "Invalid option $REPLY";;
+        esac
+    done
+elif [ $choice -eq 2 ]
+then
+    # Todo - offer frontend framework choice
+    psi-generate-applet-react
+fi

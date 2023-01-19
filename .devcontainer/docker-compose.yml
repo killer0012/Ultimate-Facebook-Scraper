@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  code:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    user: root
+    container_name: psidekick-code
+    command: sleep infinity
+    volumes:
+      - type: volume
+        source: code-volume
+        target: /root
+      - ../artifacts:/root/projects/artifacts/
+
+networks:
+  default:
+    name: jamesmart_psidekick-desktop-extension_default
+    external: true
+
+volumes:
+  code-volume:
